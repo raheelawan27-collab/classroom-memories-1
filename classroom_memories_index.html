@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Our Classroom Memories</title>
+<style>
+:root{--bg:#f6f2eb;--paper:#fffdfa;--ink:#1c2740;--muted:#667085;--accent:#d89a18;--line:#e4dccd}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1180px;margin:auto;padding:26px 16px 42px}
+header{display:flex;justify-content:space-between;gap:16px;align-items:end;flex-wrap:wrap;margin-bottom:18px}
+h1{font-family:Georgia,serif;font-size:clamp(34px,6vw,58px);margin:0}
+header p{color:var(--muted);margin:7px 0 0;line-height:1.6}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 45px rgba(31,41,55,.12)}
+.slide{display:none;grid-template-columns:minmax(0,1.7fr) minmax(260px,.75fr);min-height:650px}
+.slide.active{display:grid}
+.media{background:#101216;display:flex;align-items:center;justify-content:center}
+.media img,.media video{width:100%;height:100%;max-height:760px;object-fit:contain}
+.info{padding:38px 30px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,#ffffffd9,#fff9ee)}
+.info h2{font:700 36px Georgia,serif;margin:13px 0 8px}
+.info p{color:var(--muted);line-height:1.7}
+.tag{display:inline-block;background:#fff0cf;color:#956300;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
+.counter{margin-top:10px;font-size:13px;color:var(--muted);font-weight:700}
+.nav{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap;padding:16px 18px;border-top:1px solid var(--line)}
+.controls{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:white;border-radius:999px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;max-width:820px}
+.thumb{width:54px;height:54px;border:2px solid transparent;border-radius:12px;overflow:hidden;padding:0;background:#eee7d9;position:relative;cursor:pointer}
+.thumb.active{border-color:var(--accent)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb span{position:absolute;right:3px;bottom:3px;background:#0009;color:#fff;border-radius:8px;padding:1px 4px;font-size:9px}
+.video-thumb{width:100%;height:100%;display:grid;place-items:center;background:#1b2434;color:white;font-size:20px}
+.note{text-align:center;color:var(--muted);font-size:13px;margin-top:14px;line-height:1.6}
+@media(max-width:860px){.slide.active{display:block;min-height:0} .media{aspect-ratio:4/3} .info{padding:24px 20px} .info h2{font-size:28px}}
+
+.caption-en{display:block}
+.caption-th{display:block;margin-top:8px;font-size:0.98em;line-height:1.75;color:#4b5563}
+
+.number-thumb{
+  display:grid !important;
+  place-items:center;
+  background:#fff7e8 !important;
+  color:#1c2740 !important;
+  font-weight:700;
+}
+.number-thumb span{
+  position:static !important;
+  background:transparent !important;
+  color:#1c2740 !important;
+  padding:0 !important;
+  font-size:12px !important;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div>
+<span class="tag">Updated Classroom Album</span>
+<h1>Our Classroom Memories</h1>
+<p>High-quality photo gallery with English and Thai captions. Videos have been removed.</p>
+</div>
+<div class="counter"><span id="current">1</span> / 46</div>
+</header>
+<main class="card">
+<section class="slide active" data-index="0">
+<div class="media"><img alt="Our Classroom Memories" src="image_01.png"/></div>
+<div class="info">
+<span class="tag">Cover Page</span>
+<div class="counter">Memory 1</div>
+<h2>Our Classroom Memories</h2>
+<p><span class="caption-en">A special scrapbook-style opening page celebrating science lessons, classroom activities, teamwork, and school memories.</span><br/><span class="caption-th" lang="th">หน้าปกสไตล์สมุดภาพที่รวบรวมความทรงจำจากบทเรียนวิทยาศาสตร์ กิจกรรมในห้องเรียน การทำงานเป็นทีม และช่วงเวลาดี ๆ ในโรงเรียน</span></p>
+</div>
+</section>
+<section class="slide" data-index="1">
+<div class="media"><img alt="Microscope Ready for Discovery" src="image_02.jpg"/></div>
+<div class="info">
+<span class="tag">Lab Tools</span>
+<div class="counter">Memory 2</div>
+<h2>Microscope Ready for Discovery</h2>
+<p><span class="caption-en">The lab setup was ready, and every small detail reminded us that big discoveries often begin with a simple observation.</span><br/><span class="caption-th" lang="th">อุปกรณ์ในห้องปฏิบัติการพร้อมแล้ว และรายละเอียดเล็ก ๆ ทุกอย่างเตือนเราว่า การค้นพบครั้งใหญ่มักเริ่มต้นจากการสังเกตอย่างง่าย</span></p>
+</div>
+</section>
+<section class="slide" data-index="2">
+<div class="media"><img alt="Test Tubes and Curiosity" src="image_03.jpg"/></div>
+<div class="info">
+<span class="tag">Lab Tools</span>
+<div class="counter">Memory 3</div>
+<h2>Test Tubes and Curiosity</h2>
+<p><span class="caption-en">A neat rack of test tubes waiting for the next experiment — a small snapshot of careful preparation in the science lab.</span><br/><span class="caption-th" lang="th">ชั้นวางหลอดทดลองที่จัดไว้อย่างเรียบร้อย รอการทดลองครั้งต่อไป เป็นภาพเล็ก ๆ ที่สะท้อนถึงการเตรียมตัวอย่างรอบคอบในห้องปฏิบัติการวิทยาศาสตร์</span></p>
+</div>
+</section>
+<section class="slide" data-index="3">
+<div class="media"><img alt="A Microscopic World" src="image_04.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Results</span>
+<div class="counter">Memory 4</div>
+<h2>A Microscopic World</h2>
+<p><span class="caption-en">A fascinating microscope view that turned an ordinary lesson into a close-up journey through the hidden world of cells.</span><br/><span class="caption-th" lang="th">ภาพจากกล้องจุลทรรศน์ที่น่าสนใจ เปลี่ยนบทเรียนธรรมดาให้กลายเป็นการเดินทางเข้าไปสำรวจโลกเล็ก ๆ ของเซลล์อย่างใกล้ชิด</span></p>
+</div>
+</section>
+<section class="slide" data-index="4">
+<div class="media"><img alt="Focused on the Lens" src="image_05.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 5</div>
+<h2>Focused on the Lens</h2>
+<p><span class="caption-en">A moment of concentration and curiosity as science came alive through the microscope.</span><br/><span class="caption-th" lang="th">ช่วงเวลาแห่งสมาธิและความอยากรู้อยากเห็น เมื่อวิทยาศาสตร์มีชีวิตขึ้นมาผ่านเลนส์ของกล้องจุลทรรศน์</span></p>
+</div>
+</section>
+<section class="slide" data-index="5">
+<div class="media"><img alt="Learning by Looking Closer" src="image_06.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 6</div>
+<h2>Learning by Looking Closer</h2>
+<p><span class="caption-en">Confidence grows when students get the chance to explore, observe, and discover with their own hands.</span><br/><span class="caption-th" lang="th">ความมั่นใจเติบโตขึ้นเมื่อผู้เรียนได้มีโอกาสสำรวจ สังเกต และค้นพบสิ่งต่าง ๆ ด้วยตนเอง</span></p>
+</div>
+</section>
+<section class="slide" data-index="6">
+<div class="media"><img alt="Science in Action" src="image_07.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 7</div>
+<h2>Science in Action</h2>
+<p><span class="caption-en">Hands-on learning turned the classroom into a place of real discovery, one careful observation at a time.</span><br/><span class="caption-th" lang="th">การเรียนรู้แบบลงมือปฏิบัติทำให้ห้องเรียนกลายเป็นพื้นที่แห่งการค้นพบจริง ๆ จากการสังเกตอย่างรอบคอบทีละขั้น</span></p>
+</div>
+</section>
+<section class="slide" data-index="7">
+<div class="media"><img alt="Curiosity Through the Microscope" src="image_08.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 8</div>
+<h2>Curiosity Through the Microscope</h2>
+<p><span class="caption-en">A quiet and thoughtful moment where curiosity led the way and science became something to see for yourself.</span><br/><span class="caption-th" lang="th">ช่วงเวลาที่เงียบสงบและเต็มไปด้วยความคิด เมื่อความอยากรู้อยากเห็นนำทาง และวิทยาศาสตร์กลายเป็นสิ่งที่มองเห็นได้ด้วยตาตนเอง</span></p>
+</div>
+</section>
+<section class="slide" data-index="8">
+<div class="media"><img alt="Discovering the Unseen" src="image_09.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 9</div>
+<h2>Discovering the Unseen</h2>
+<p><span class="caption-en">The best classroom moments are often the ones where students lean in closer and find something new.</span><br/><span class="caption-th" lang="th">ช่วงเวลาที่ดีที่สุดในห้องเรียนมักเกิดขึ้นเมื่อผู้เรียนก้มมองใกล้ ๆ และค้นพบสิ่งใหม่ที่ไม่เคยเห็นมาก่อน</span></p>
+</div>
+</section>
+<section class="slide" data-index="9">
+<div class="media"><img alt="Young Scientists Together" src="image_10.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 10</div>
+<h2>Young Scientists Together</h2>
+<p><span class="caption-en">A cheerful group memory celebrating teamwork, confidence, and the joy of learning together in the lab.</span><br/><span class="caption-th" lang="th">ภาพความทรงจำของกลุ่มนักวิทยาศาสตร์รุ่นเยาว์ที่เต็มไปด้วยความสุข แสดงถึงการทำงานเป็นทีม ความมั่นใจ และความสนุกของการเรียนรู้ร่วมกันในห้องปฏิบัติการ</span></p>
+</div>
+</section>
+<section class="slide" data-index="10">
+<div class="media"><img alt="Lab Coats and Big Smiles" src="image_11.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 11</div>
+<h2>Lab Coats and Big Smiles</h2>
+<p><span class="caption-en">Science brought everyone together — this frame captures friendship, fun, and shared learning.</span><br/><span class="caption-th" lang="th">วิทยาศาสตร์พาทุกคนมารวมกัน ภาพนี้เก็บทั้งมิตรภาพ ความสนุก และการเรียนรู้ร่วมกันไว้ในช่วงเวลาเดียว</span></p>
+</div>
+</section>
+<section class="slide" data-index="11">
+<div class="media"><img alt="A Happy Science Group" src="image_12.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 12</div>
+<h2>A Happy Science Group</h2>
+<p><span class="caption-en">A bright and joyful class moment filled with smiles, confidence, and memories worth keeping.</span><br/><span class="caption-th" lang="th">ช่วงเวลาที่สดใสและสนุกสนานของชั้นเรียน เต็มไปด้วยรอยยิ้ม ความมั่นใจ และความทรงจำที่ควรเก็บไว้</span></p>
+</div>
+</section>
+<section class="slide" data-index="12">
+<div class="media"><img alt="Friends, Experiments, and Laughter" src="image_13.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 13</div>
+<h2>Friends, Experiments, and Laughter</h2>
+<p><span class="caption-en">This moment perfectly captured the balance of friendship and discovery that made the classroom feel special.</span><br/><span class="caption-th" lang="th">ภาพนี้ถ่ายทอดความสมดุลระหว่างมิตรภาพและการค้นพบได้อย่างพอดี ทำให้ห้องเรียนเป็นสถานที่ที่พิเศษยิ่งขึ้น</span></p>
+</div>
+</section>
+<section class="slide" data-index="13">
+<div class="media"><img alt="Full Group, Full of Memories" src="image_14.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 14</div>
+<h2>Full Group, Full of Memories</h2>
+<p><span class="caption-en">A larger group memory that reflects class spirit, participation, and the energy of practical science learning.</span><br/><span class="caption-th" lang="th">ภาพหมู่ขนาดใหญ่ที่สะท้อนถึงพลังของชั้นเรียน การมีส่วนร่วม และบรรยากาศที่กระตือรือร้นของการเรียนวิทยาศาสตร์ภาคปฏิบัติ</span></p>
+</div>
+</section>
+<section class="slide" data-index="14">
+<div class="media"><img alt="A Quiet Exam Moment" src="image_15.jpg"/></div>
+<div class="info">
+<span class="tag">Exam Moments</span>
+<div class="counter">Memory 15</div>
+<h2>A Quiet Exam Moment</h2>
+<p><span class="caption-en">A calm and focused classroom scene that reminds us how much effort and dedication students bring to their learning.</span><br/><span class="caption-th" lang="th">บรรยากาศในห้องสอบที่สงบและมีสมาธิ เตือนให้เห็นถึงความพยายามและความตั้งใจที่ผู้เรียนทุ่มเทให้กับการเรียนของตน</span></p>
+</div>
+</section>
+<section class="slide" data-index="15">
+<div class="media"><img alt="Concentration Across the Room" src="image_16.jpg"/></div>
+<div class="info">
+<span class="tag">Exam Moments</span>
+<div class="counter">Memory 16</div>
+<h2>Concentration Across the Room</h2>
+<p><span class="caption-en">The exam room was quiet, but every desk reflected hard work, focus, and determination.</span><br/><span class="caption-th" lang="th">ห้องสอบเงียบสงบ แต่ทุกโต๊ะสะท้อนถึงความขยัน ความตั้งใจ และความมุ่งมั่น</span></p>
+</div>
+</section>
+<section class="slide" data-index="16">
+<div class="media"><img alt="Working Toward Success" src="image_17.jpg"/></div>
+<div class="info">
+<span class="tag">Exam Moments</span>
+<div class="counter">Memory 17</div>
+<h2>Working Toward Success</h2>
+<p><span class="caption-en">Every student had their own quiet moment of effort, showing the discipline and commitment behind classroom success.</span><br/><span class="caption-th" lang="th">ผู้เรียนแต่ละคนมีช่วงเวลาแห่งความพยายามของตนเอง แสดงถึงวินัยและความมุ่งมั่นที่อยู่เบื้องหลังความสำเร็จในห้องเรียน</span></p>
+</div>
+</section>
+<section class="slide" data-index="17">
+<div class="media"><img alt="Microscope Observation" src="image_18.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope View</span>
+<div class="counter">Memory 18</div>
+<h2>Microscope Observation</h2>
+<p><span class="caption-en">A microscope view showing stained cells — one of our memorable science observations.</span><br/><span class="caption-th" lang="th">ภาพจากกล้องจุลทรรศน์ที่แสดงเซลล์ซึ่งผ่านการย้อมสี เป็นหนึ่งในช่วงเวลาการสังเกตทางวิทยาศาสตร์ที่น่าจดจำของเรา</span></p>
+</div>
+</section>
+<section class="slide" data-index="18">
+<div class="media"><img alt="A Fun Team Moment" src="image_19.jpg"/></div>
+<div class="info">
+<span class="tag">School Event Memories</span>
+<div class="counter">Memory 19</div>
+<h2>A Fun Team Moment</h2>
+<p><span class="caption-en">A relaxed group memory full of smiles, peace signs, and the easy friendship that makes school events special.</span><br/><span class="caption-th" lang="th">ภาพกลุ่มสบาย ๆ ที่เต็มไปด้วยรอยยิ้ม สัญลักษณ์สันติภาพ และมิตรภาพแบบเป็นธรรมชาติซึ่งทำให้งานโรงเรียนพิเศษยิ่งขึ้น</span></p>
+</div>
+</section>
+<section class="slide" data-index="19">
+<div class="media"><img alt="Teams Ready for the Challenge" src="image_20.jpg"/></div>
+<div class="info">
+<span class="tag">School Event Memories</span>
+<div class="counter">Memory 20</div>
+<h2>Teams Ready for the Challenge</h2>
+<p><span class="caption-en">Blue and green teams lined up together, ready to participate, compete, and enjoy the activity as one school community.</span><br/><span class="caption-th" lang="th">ทีมสีน้ำเงินและสีเขียวยืนเรียงกัน พร้อมเข้าร่วม แข่งขัน และสนุกกับกิจกรรมในฐานะชุมชนโรงเรียนเดียวกัน</span></p>
+</div>
+</section>
+<section class="slide" data-index="20">
+<div class="media"><img alt="Creating Together" src="image_21.jpg"/></div>
+<div class="info">
+<span class="tag">School Event Memories</span>
+<div class="counter">Memory 21</div>
+<h2>Creating Together</h2>
+<p><span class="caption-en">Students worked side by side on a creative task, sharing ideas and turning simple materials into a team effort.</span><br/><span class="caption-th" lang="th">ผู้เรียนทำงานเคียงข้างกันในกิจกรรมสร้างสรรค์ แลกเปลี่ยนความคิดและเปลี่ยนวัสดุง่าย ๆ ให้กลายเป็นผลงานจากความร่วมมือ</span></p>
+</div>
+</section>
+<section class="slide" data-index="21">
+<div class="media"><img alt="Teamwork on the Floor" src="image_22.jpg"/></div>
+<div class="info">
+<span class="tag">School Event Memories</span>
+<div class="counter">Memory 22</div>
+<h2>Teamwork on the Floor</h2>
+<p><span class="caption-en">A hands-on activity where cooperation, patience, and a little creativity brought the group together.</span><br/><span class="caption-th" lang="th">กิจกรรมแบบลงมือทำที่นำความร่วมมือ ความอดทน และความคิดสร้างสรรค์มารวมกัน จนเกิดเป็นพลังของทีม</span></p>
+</div>
+</section>
+<section class="slide" data-index="22">
+<div class="media"><img alt="Building Ideas into Reality" src="image_23.jpg"/></div>
+<div class="info">
+<span class="tag">School Event Memories</span>
+<div class="counter">Memory 23</div>
+<h2>Building Ideas into Reality</h2>
+<p><span class="caption-en">A focused team moment showing how students can turn paper, planning, and imagination into something they are proud of.</span><br/><span class="caption-th" lang="th">ช่วงเวลาที่ทุกคนมีสมาธิ แสดงให้เห็นว่ากระดาษ การวางแผน และจินตนาการสามารถกลายเป็นผลงานที่น่าภาคภูมิใจได้</span></p>
+</div>
+</section>
+<section class="slide" data-index="23">
+<div class="media"><img alt="A Lesson in Progress" src="image_24.jpg"/></div>
+<div class="info">
+<span class="tag">Classroom Memories</span>
+<div class="counter">Memory 24</div>
+<h2>A Lesson in Progress</h2>
+<p><span class="caption-en">A classroom scene capturing the everyday rhythm of teaching, listening, questioning, and learning together.</span><br/><span class="caption-th" lang="th">ภาพบรรยากาศในห้องเรียนที่สะท้อนจังหวะการสอน การฟัง การตั้งคำถาม และการเรียนรู้ร่วมกันในแต่ละวัน</span></p>
+</div>
+</section>
+<section class="slide" data-index="24">
+<div class="media"><img alt="Preparing the Specimens" src="image_25.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 25</div>
+<h2>Preparing the Specimens</h2>
+<p><span class="caption-en">Students carefully prepared their materials before observation — a small but important step in practical science.</span><br/><span class="caption-th" lang="th">ผู้เรียนเตรียมวัสดุอย่างระมัดระวังก่อนการสังเกต เป็นขั้นตอนเล็ก ๆ แต่สำคัญมากในการเรียนวิทยาศาสตร์ภาคปฏิบัติ</span></p>
+</div>
+</section>
+<section class="slide" data-index="25">
+<div class="media"><img alt="Looking Closer" src="image_26.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 26</div>
+<h2>Looking Closer</h2>
+<p><span class="caption-en">A student explores the specimen through the microscope, turning a classroom exercise into a real moment of discovery.</span><br/><span class="caption-th" lang="th">ผู้เรียนสำรวจตัวอย่างผ่านกล้องจุลทรรศน์ เปลี่ยนกิจกรรมในห้องเรียนให้กลายเป็นช่วงเวลาแห่งการค้นพบจริง ๆ</span></p>
+</div>
+</section>
+<section class="slide" data-index="26">
+<div class="media"><img alt="Observation with Guidance" src="image_27.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 27</div>
+<h2>Observation with Guidance</h2>
+<p><span class="caption-en">Practical learning becomes more meaningful when students can observe, ask questions, and receive guidance as they work.</span><br/><span class="caption-th" lang="th">การเรียนภาคปฏิบัติมีความหมายมากขึ้นเมื่อผู้เรียนได้สังเกต ตั้งคำถาม และรับคำแนะนำระหว่างลงมือทำ</span></p>
+</div>
+</section>
+<section class="slide" data-index="27">
+<div class="media"><img alt="From Onion to Microscope" src="image_28.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 28</div>
+<h2>From Onion to Microscope</h2>
+<p><span class="caption-en">A simple onion became the starting point for a practical lesson about cells, tissues, and scientific observation.</span><br/><span class="caption-th" lang="th">หัวหอมธรรมดากลายเป็นจุดเริ่มต้นของบทเรียนภาคปฏิบัติเกี่ยวกับเซลล์ เนื้อเยื่อ และการสังเกตทางวิทยาศาสตร์</span></p>
+</div>
+</section>
+<section class="slide" data-index="28">
+<div class="media"><img alt="Slide Preparation" src="image_29.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 29</div>
+<h2>Slide Preparation</h2>
+<p><span class="caption-en">A prepared slide ready for examination — proof that careful technique matters before the microscope work even begins.</span><br/><span class="caption-th" lang="th">สไลด์ที่เตรียมพร้อมสำหรับการตรวจดู แสดงให้เห็นว่าเทคนิคที่ละเอียดและถูกต้องมีความสำคัญก่อนเริ่มใช้กล้องจุลทรรศน์</span></p>
+</div>
+</section>
+<section class="slide" data-index="29">
+<div class="media"><img alt="Onion Epidermal Cells" src="image_30.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Results</span>
+<div class="counter">Memory 30</div>
+<h2>Onion Epidermal Cells</h2>
+<p><span class="caption-en">A clear microscopic view of onion epidermal cells, showing the beautiful brick-like pattern of plant cell walls.</span><br/><span class="caption-th" lang="th">ภาพเซลล์ผิวหัวหอมที่เห็นได้ชัดเจนผ่านกล้องจุลทรรศน์ แสดงรูปแบบผนังเซลล์ของพืชที่คล้ายอิฐอย่างสวยงาม</span></p>
+</div>
+</section>
+<section class="slide" data-index="30">
+<div class="media"><img alt="Working Through the Method" src="image_31.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 31</div>
+<h2>Working Through the Method</h2>
+<p><span class="caption-en">Students follow the practical steps together, learning that good science depends on care, consistency, and teamwork.</span><br/><span class="caption-th" lang="th">ผู้เรียนทำตามขั้นตอนภาคปฏิบัติร่วมกัน และเรียนรู้ว่าวิทยาศาสตร์ที่ดีต้องอาศัยความรอบคอบ ความสม่ำเสมอ และการทำงานเป็นทีม</span></p>
+</div>
+</section>
+<section class="slide" data-index="31">
+<div class="media"><img alt="Preparing Slides as a Team" src="image_32.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 32</div>
+<h2>Preparing Slides as a Team</h2>
+<p><span class="caption-en">Students compare and prepare their slides together, helping one another turn a procedure into understanding.</span><br/><span class="caption-th" lang="th">ผู้เรียนเปรียบเทียบและเตรียมสไลด์ร่วมกัน ช่วยเหลือกันเพื่อเปลี่ยนขั้นตอนการทดลองให้กลายเป็นความเข้าใจ</span></p>
+</div>
+</section>
+<section class="slide" data-index="32">
+<div class="media"><img alt="Careful Hands, Careful Science" src="image_33.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 33</div>
+<h2>Careful Hands, Careful Science</h2>
+<p><span class="caption-en">A close practical moment showing the patience and attention needed to prepare a specimen properly.</span><br/><span class="caption-th" lang="th">ช่วงเวลาภาคปฏิบัติที่แสดงถึงความอดทนและความใส่ใจที่จำเป็นต่อการเตรียมตัวอย่างอย่างถูกต้อง</span></p>
+</div>
+</section>
+<section class="slide" data-index="33">
+<div class="media"><img alt="Comparing Prepared Slides" src="image_34.jpg"/></div>
+<div class="info">
+<span class="tag">Science Practical</span>
+<div class="counter">Memory 34</div>
+<h2>Comparing Prepared Slides</h2>
+<p><span class="caption-en">Students inspect their prepared slides before microscopy, checking their work and learning from each other.</span><br/><span class="caption-th" lang="th">ผู้เรียนตรวจดูสไลด์ที่เตรียมไว้ก่อนใช้กล้องจุลทรรศน์ เพื่อเช็กผลงานและเรียนรู้จากกันและกัน</span></p>
+</div>
+</section>
+<section class="slide" data-index="34">
+<div class="media"><img alt="Waiting for a Turn" src="image_35.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 35</div>
+<h2>Waiting for a Turn</h2>
+<p><span class="caption-en">Practical lessons are also about patience — students wait, watch, and learn from each other's observations.</span><br/><span class="caption-th" lang="th">บทเรียนภาคปฏิบัติยังสอนเรื่องความอดทน ผู้เรียนรอ ดู และเรียนรู้จากการสังเกตของเพื่อน ๆ</span></p>
+</div>
+</section>
+<section class="slide" data-index="35">
+<div class="media"><img alt="Ready to Observe" src="image_36.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 36</div>
+<h2>Ready to Observe</h2>
+<p><span class="caption-en">A group gathers around the microscope, ready to see how their preparation looks under magnification.</span><br/><span class="caption-th" lang="th">กลุ่มผู้เรียนรวมตัวกันรอบกล้องจุลทรรศน์ พร้อมดูว่าตัวอย่างที่เตรียมไว้จะเป็นอย่างไรเมื่อขยายภาพ</span></p>
+</div>
+</section>
+<section class="slide" data-index="36">
+<div class="media"><img alt="Another Look Through the Lens" src="image_37.jpg"/></div>
+<div class="info">
+<span class="tag">Microscope Practice</span>
+<div class="counter">Memory 37</div>
+<h2>Another Look Through the Lens</h2>
+<p><span class="caption-en">A final close-up moment at the microscope, capturing curiosity, concentration, and the excitement of seeing science directly.</span><br/><span class="caption-th" lang="th">อีกหนึ่งช่วงเวลาระยะใกล้ที่กล้องจุลทรรศน์ ถ่ายทอดทั้งความอยากรู้อยากเห็น สมาธิ และความตื่นเต้นของการได้เห็นวิทยาศาสตร์ด้วยตนเอง</span></p>
+</div>
+</section>
+<section class="slide" data-index="37">
+<div class="media"><img alt="Explaining Period 3 Trends" src="image_38.jpg"/></div>
+<div class="info">
+<span class="tag">Science Theory Lesson</span>
+<div class="counter">Memory 38</div>
+<h2>Explaining Period 3 Trends</h2>
+<p><span class="caption-en">A focused classroom lesson where periodic trends across Period 3 are explained with the help of a clear visual presentation.</span><br/><span class="caption-th" lang="th">บทเรียนที่มีสมาธิซึ่งอธิบายแนวโน้มของธาตุในคาบที่ 3 โดยใช้ภาพประกอบที่ชัดเจนช่วยให้เข้าใจได้ง่ายขึ้น</span></p>
+</div>
+</section>
+<section class="slide" data-index="38">
+<div class="media"><img alt="Teaching the Elements of Group 17" src="image_39.jpg"/></div>
+<div class="info">
+<span class="tag">Science Theory Lesson</span>
+<div class="counter">Memory 39</div>
+<h2>Teaching the Elements of Group 17</h2>
+<p><span class="caption-en">Students follow attentively as the discussion moves to Group 17, connecting textbook concepts with classroom explanation.</span><br/><span class="caption-th" lang="th">ผู้เรียนติดตามอย่างตั้งใจเมื่อบทเรียนเข้าสู่ธาตุหมู่ 17 และเชื่อมโยงเนื้อหาในหนังสือกับคำอธิบายในชั้นเรียน</span></p>
+</div>
+</section>
+<section class="slide" data-index="39">
+<div class="media"><img alt="Diploid and Haploid Cells" src="image_40.jpg"/></div>
+<div class="info">
+<span class="tag">Biology Lesson</span>
+<div class="counter">Memory 40</div>
+<h2>Diploid and Haploid Cells</h2>
+<p><span class="caption-en">A memorable biology lesson introducing the difference between diploid and haploid cells in a simple and engaging way.</span><br/><span class="caption-th" lang="th">บทเรียนชีววิทยาที่น่าจดจำซึ่งอธิบายความแตกต่างระหว่างเซลล์ดิพลอยด์และแฮพลอยด์ด้วยวิธีที่เรียบง่ายและน่าสนใจ</span></p>
+</div>
+</section>
+<section class="slide" data-index="40">
+<div class="media"><img alt="Learning the Cell Cycle" src="image_41.jpg"/></div>
+<div class="info">
+<span class="tag">Biology Lesson</span>
+<div class="counter">Memory 41</div>
+<h2>Learning the Cell Cycle</h2>
+<p><span class="caption-en">The class explores the stages of the cell cycle, linking diagrams on the screen with ideas from the lesson.</span><br/><span class="caption-th" lang="th">ชั้นเรียนสำรวจขั้นตอนต่าง ๆ ของวัฏจักรเซลล์ โดยเชื่อมโยงภาพบนหน้าจอกับแนวคิดที่เรียนในบทเรียน</span></p>
+</div>
+</section>
+<section class="slide" data-index="41">
+<div class="media"><img alt="Discussing Chromosomes and Gametes" src="image_42.jpg"/></div>
+<div class="info">
+<span class="tag">Biology Lesson</span>
+<div class="counter">Memory 42</div>
+<h2>Discussing Chromosomes and Gametes</h2>
+<p><span class="caption-en">An interactive teaching moment as the topic of chromosomes, somatic cells, and gametes is explained in front of the class.</span><br/><span class="caption-th" lang="th">ช่วงเวลาการสอนแบบมีปฏิสัมพันธ์ ขณะอธิบายเรื่องโครโมโซม เซลล์ร่างกาย และเซลล์สืบพันธุ์ต่อหน้าชั้นเรียน</span></p>
+</div>
+</section>
+<section class="slide" data-index="42">
+<div class="media"><img alt="Reading About Cell Cycle and Mitosis" src="image_43.jpg"/></div>
+<div class="info">
+<span class="tag">Biology Lesson</span>
+<div class="counter">Memory 43</div>
+<h2>Reading About Cell Cycle and Mitosis</h2>
+<p><span class="caption-en">A calm classroom scene where students read and reflect on the section about cell cycle and mitosis together.</span><br/><span class="caption-th" lang="th">บรรยากาศการเรียนที่สงบ เมื่อผู้เรียนอ่านและทบทวนเนื้อหาเกี่ยวกับวัฏจักรเซลล์และไมโทซิสร่วมกัน</span></p>
+</div>
+</section>
+<section class="slide" data-index="43">
+<div class="media"><img alt="Yellow Team Lab Group Photo" src="image_44.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 44</div>
+<h2>Yellow Team Lab Group Photo</h2>
+<p><span class="caption-en">A cheerful group photo capturing the yellow team gathered in the laboratory after a practical session.</span><br/><span class="caption-th" lang="th">ภาพหมู่ที่สดใสของทีมสีเหลืองในห้องปฏิบัติการ หลังจากจบกิจกรรมภาคปฏิบัติร่วมกัน</span></p>
+</div>
+</section>
+<section class="slide" data-index="44">
+<div class="media"><img alt="Smiles After the Practical" src="image_45.jpg"/></div>
+<div class="info">
+<span class="tag">Group Memories</span>
+<div class="counter">Memory 45</div>
+<h2>Smiles After the Practical</h2>
+<p><span class="caption-en">A smaller group shares a happy moment together, showing friendship, confidence, and classroom spirit.</span><br/><span class="caption-th" lang="th">ภาพกลุ่มเล็ก ๆ ที่แบ่งปันช่วงเวลาแห่งความสุข แสดงถึงมิตรภาพ ความมั่นใจ และจิตวิญญาณของห้องเรียน</span></p>
+</div>
+</section>
+<section class="slide" data-index="45">
+<div class="media"><img alt="Thank You" src="image_46.png"/></div>
+<div class="info">
+<span class="tag">Thank You Page</span>
+<div class="counter">Memory 46</div>
+<h2>Thank You</h2>
+<p><span class="caption-en">Thank you for being part of our classroom memories at Visuttharangsi Kanchanaburi School.</span><br/><span class="caption-th" lang="th">ขอบคุณที่เป็นส่วนหนึ่งของความทรงจำในห้องเรียนของเราที่โรงเรียนวิสุทธรังษี จังหวัดกาญจนบุรี</span></p>
+</div>
+</section>
+<div class="nav">
+<div class="controls">
+<button class="btn" id="prev">← Previous</button>
+<button class="btn" id="next">Next →</button>
+</div>
+<div class="thumbs"><button class="thumb active number-thumb" data-go="0" title="Our Classroom Memories" type="button"><span>1</span></button><button class="thumb number-thumb" data-go="1" title="Microscope Ready for Discovery" type="button"><span>2</span></button><button class="thumb number-thumb" data-go="2" title="Test Tubes and Curiosity" type="button"><span>3</span></button><button class="thumb number-thumb" data-go="3" title="A Microscopic World" type="button"><span>4</span></button><button class="thumb number-thumb" data-go="4" title="Focused on the Lens" type="button"><span>5</span></button><button class="thumb number-thumb" data-go="5" title="Learning by Looking Closer" type="button"><span>6</span></button><button class="thumb number-thumb" data-go="6" title="Science in Action" type="button"><span>7</span></button><button class="thumb number-thumb" data-go="7" title="Curiosity Through the Microscope" type="button"><span>8</span></button><button class="thumb number-thumb" data-go="8" title="Discovering the Unseen" type="button"><span>9</span></button><button class="thumb number-thumb" data-go="9" title="Young Scientists Together" type="button"><span>10</span></button><button class="thumb number-thumb" data-go="10" title="Lab Coats and Big Smiles" type="button"><span>11</span></button><button class="thumb number-thumb" data-go="11" title="A Happy Science Group" type="button"><span>12</span></button><button class="thumb number-thumb" data-go="12" title="Friends, Experiments, and Laughter" type="button"><span>13</span></button><button class="thumb number-thumb" data-go="13" title="Full Group, Full of Memories" type="button"><span>14</span></button><button class="thumb number-thumb" data-go="14" title="A Quiet Exam Moment" type="button"><span>15</span></button><button class="thumb number-thumb" data-go="15" title="Concentration Across the Room" type="button"><span>16</span></button><button class="thumb number-thumb" data-go="16" title="Working Toward Success" type="button"><span>17</span></button><button class="thumb number-thumb" data-go="17" title="Microscope Observation" type="button"><span>18</span></button><button class="thumb number-thumb" data-go="18" title="A Fun Team Moment" type="button"><span>19</span></button><button class="thumb number-thumb" data-go="19" title="Teams Ready for the Challenge" type="button"><span>20</span></button><button class="thumb number-thumb" data-go="20" title="Creating Together" type="button"><span>21</span></button><button class="thumb number-thumb" data-go="21" title="Teamwork on the Floor" type="button"><span>22</span></button><button class="thumb number-thumb" data-go="22" title="Building Ideas into Reality" type="button"><span>23</span></button><button class="thumb number-thumb" data-go="23" title="A Lesson in Progress" type="button"><span>24</span></button><button class="thumb number-thumb" data-go="24" title="Preparing the Specimens" type="button"><span>25</span></button><button class="thumb number-thumb" data-go="25" title="Looking Closer" type="button"><span>26</span></button><button class="thumb number-thumb" data-go="26" title="Observation with Guidance" type="button"><span>27</span></button><button class="thumb number-thumb" data-go="27" title="From Onion to Microscope" type="button"><span>28</span></button><button class="thumb number-thumb" data-go="28" title="Slide Preparation" type="button"><span>29</span></button><button class="thumb number-thumb" data-go="29" title="Onion Epidermal Cells" type="button"><span>30</span></button><button class="thumb number-thumb" data-go="30" title="Working Through the Method" type="button"><span>31</span></button><button class="thumb number-thumb" data-go="31" title="Preparing Slides as a Team" type="button"><span>32</span></button><button class="thumb number-thumb" data-go="32" title="Careful Hands, Careful Science" type="button"><span>33</span></button><button class="thumb number-thumb" data-go="33" title="Comparing Prepared Slides" type="button"><span>34</span></button><button class="thumb number-thumb" data-go="34" title="Waiting for a Turn" type="button"><span>35</span></button><button class="thumb number-thumb" data-go="35" title="Ready to Observe" type="button"><span>36</span></button><button class="thumb number-thumb" data-go="36" title="Another Look Through the Lens" type="button"><span>37</span></button><button class="thumb number-thumb" data-go="37" title="Explaining Period 3 Trends" type="button"><span>38</span></button><button class="thumb number-thumb" data-go="38" title="Teaching the Elements of Group 17" type="button"><span>39</span></button><button class="thumb number-thumb" data-go="39" title="Diploid and Haploid Cells" type="button"><span>40</span></button><button class="thumb number-thumb" data-go="40" title="Learning the Cell Cycle" type="button"><span>41</span></button><button class="thumb number-thumb" data-go="41" title="Discussing Chromosomes and Gametes" type="button"><span>42</span></button><button class="thumb number-thumb" data-go="42" title="Reading About Cell Cycle and Mitosis" type="button"><span>43</span></button><button class="thumb number-thumb" data-go="43" title="Yellow Team Lab Group Photo" type="button"><span>44</span></button><button class="thumb number-thumb" data-go="44" title="Smiles After the Practical" type="button"><span>45</span></button><button class="thumb number-thumb" data-go="45" title="Thank You" type="button"><span>46</span></button></div>
+</div>
+</main>
+<div class="note">Hosting-ready version with separate high-quality image files. English and Thai captions are included.</div>
+</div>
+<script>
+(() => {
+const slides=[...document.querySelectorAll('.slide')];
+const thumbs=[...document.querySelectorAll('.thumb')];
+const current=document.getElementById('current');
+let index=0;
+function show(i){
+  index=(i+slides.length)%slides.length;
+  slides.forEach((s,n)=>s.classList.toggle('active',n===index));
+  thumbs.forEach((t,n)=>t.classList.toggle('active',n===index));
+  current.textContent=index+1;
+  document.querySelectorAll('video').forEach((v,n)=>{if(n!==index) v.pause();});
+}
+document.getElementById('prev').addEventListener('click',()=>show(index-1));
+document.getElementById('next').addEventListener('click',()=>show(index+1));
+thumbs.forEach(t=>t.addEventListener('click',()=>show(Number(t.dataset.go))));
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft') show(index-1); if(e.key==='ArrowRight') show(index+1);});
+})();
+</script>
+</body>
+</html>
